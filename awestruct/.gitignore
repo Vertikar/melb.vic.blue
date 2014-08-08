@@ -1,0 +1,9 @@
+.awestruct
+.bundle
+.sass-cache
+Gemfile.lock
+_site
+_tmp
+_deploy
+*.swp
+*.bak

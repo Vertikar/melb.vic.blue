@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# s3cmd has 'issues' with detecting the mime type for minified production files
+#
+
+case $1 in
+  "prod")
+    s3cmd put -m "text/css" _site/stylesheets/*.css s3://melb.vic.blue/stylesheets/
+    s3cmd put -m "text/javascript" _site/javascripts/*.js s3://melb.vic.blue/javascripts/
+    ;;
+
+  *)
+    echo "$0 [prod]"
+esac
